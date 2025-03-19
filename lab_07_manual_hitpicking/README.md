@@ -45,7 +45,11 @@ retrieved from https://lsd.docking.org/targets/D4 following steps from
   * Actions -> Surface -> Color -> by heteroatom
 
 ## Hit picking In Chimera
-* Tools -> Surface/Binding Analysis -> ViewDock 
+This is to open a multi-molecule .mol2 file and select which ones
+are worth persuing, by partitioning them in to
+'viable', 'deleted', 'purged'
+
+* Tools -> Surface/Binding Analysis -> ViewDock
   * Open intermediate_data/D4_in_vitro_hits.mol2
   * Dock 3.5.x single
 * Hide non-polar hydrogens
@@ -54,7 +58,7 @@ retrieved from https://lsd.docking.org/targets/D4 following steps from
   * Actions -> Atoms/Bonds -> Hide
 * Show Total Energy
   * From ViewDock panel
-  * Column -> Show -> Total Score
+  * Column -> Show -> Total Energy
 * Find HBonds
   * From the ViewDock panel
   * HBonds -> Add Count to entire receptor

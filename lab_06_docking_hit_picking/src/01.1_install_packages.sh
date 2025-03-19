@@ -14,7 +14,10 @@ pip install unimol_tools
 pip install umap-learn
 pip install datashader
 pip install holoviews
-
+pip install bokeh
+pip install jupyterlab
+pip install jupyter_bokeh
+pip install pyarrow
 
 # packages for clustering
 pip install scanpy
@@ -23,3 +26,27 @@ pip install leidenalg
 
 # install the ggrastr package
 Rscript -e 'install.packages("ggrastr", repos="https://cloud.r-project.org")'
+
+
+###########
+
+#To get the molecule embeddings to work locally
+conda create --name=main39 --yes
+conda activate main39
+conda install --name=main39 python=3.9 --yes
+
+pip install datashader
+pip install holoviews
+pip install bokeh
+pip install jupyterlab
+pip install jupyter_bokeh
+pip install pyarrow
+
+pip install ipykernel
+ipython kernel install --user --name=main39
+
+# copy
+
+
+jupyter lab
+# in jupter lab
