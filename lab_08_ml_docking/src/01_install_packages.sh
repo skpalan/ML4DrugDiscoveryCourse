@@ -32,26 +32,36 @@ module save bioinf595
 
 
 # Create a symlink for the class turbo into the home directory
-ln -s /nfs/turbo/dcmb-class/bioinf595/sec001/${USER} ~/turbo_bioinf595w25
-mkdir -p ~/turbo_bioinf595/opt
+ln -s /nfs/turbo/dcmb-class/bioinf595/sec001/${USER} ${HOME}/turbo_bioinf595
+# this allows you to e.g. `cd ~/turbo_bioinf595` and the data will live
+# on turbo not in your home directory. you can check symlinks with
+# `ls -ls ${HOME}/turbo/bioinf595`
+
+
+# create an opt directory where you can install packages
+mkdir -p ${HOME}/turbo_bioinf595/opt
+
+
 
 
 ###################################
 # Clean out all versions of conda #
 ###################################
 # Note that if you have conda setup for other research this will remove those environments!
+# If you haven't installed mamba or conda environments you won't need to do this, but you can
+# check by looking in your ${HOME}/.bashrc for these blocks.
 
-# Remove conda initialize block from ~/.bashrc
-sed '/# >>> conda initialize >>>/,/# <<< conda initialize <<</d' ~/.bashrc > ~/.bashrc_new
-# check that ~/.bashrc_new looks ok
-mv ~/.bashrc_new ~/.bashrc
+# Remove conda initialize block from ${HOME}/.bashrc
+sed '/# >>> conda initialize >>>/,/# <<< conda initialize <<</d' ${HOME}/.bashrc > ${HOME}/.bashrc_new
+# check that ${HOME}/.bashrc_new looks ok
+mv ${HOME}/.bashrc_new ${HOME}/.bashrc
 
-# Remove mamba initialize block from ~/.bashrc
-sed '/# >>> conda initialize >>>/,/# <<< conda initialize <<</d' ~/.bashrc > ~/.bashrc_new
-# check that ~/.bashrc_new looks ok
-mv ~/.bashrc_new ~/.bashrc
+# Remove mamba initialize block from ${HOME}/.bashrc
+sed '/# >>> conda initialize >>>/,/# <<< conda initialize <<</d' ${HOME}/.bashrc > ${HOME}/.bashrc_new
+# check that ${HOME}/.bashrc_new looks ok
+mv ${HOME}/.bashrc_new ${HOME}/.bashrc
 
-rm -f ~/.condarc
+rm -f ${HOME}/.condarc
 rm -rf .conda
 
 
@@ -59,6 +69,8 @@ rm -rf .conda
 # Install a local version of miniforge3 #
 #########################################
 # https://github.com/conda-forge/miniforge
+# Miniforge is a version of conda and mamba produced by conda-forge (an open source community)
+# not Anaconda (a for-profit company)
 
 # I recommend moving conda out of your home directory as there is often not enough space to
 # have it in home directory.
@@ -72,7 +84,7 @@ rm -rf Miniforge3-latest-Linux-x86_64.sh
 
 # activate the local conda environment
 source ${HOME}/turbo_bioinf595/miniforge3/etc/profile.d/conda.sh
-source ${HOME}/turbo_bininf595/miniforge3/etc/profile.d/mamba.sh
+source ${HOME}/turbo_bioinf595/miniforge3/etc/profile.d/mamba.sh
 conda activate
 
 conda init
@@ -115,7 +127,7 @@ cd ../..
 
 
 # now instlal NeuralPLexer
-cd ${HOME}/turbo_bioinf595w25/opt
+cd ${HOME}/turbo_bioinf595/opt
 git clone https://github.com/zrqiao/NeuralPLexer.git
 cd NeuralPLexer
 
