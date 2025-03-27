@@ -132,7 +132,7 @@ git clone https://github.com/zrqiao/NeuralPLexer.git
 cd NeuralPLexer
 
 # remove openfold because we've already installed a specific version of it
-sed '\openfold @ git+https://github.com/aqlaboratory/openfold.git@103d0370ad9ce07579c20fa9c889a632f9b16618\d' > requirements.txt > requirements_new.txt
+cat requirements.txt | sed '/openfold/d' > requirements_new.txt
 mv requirements_new.txt > requirements.txt
 mamba env update -n bioinf595 -f environment_dev.yaml --yes
 pip install -e .
