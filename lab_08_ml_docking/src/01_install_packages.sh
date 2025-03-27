@@ -83,8 +83,8 @@ bash Miniforge3-Linux-x86_64.sh -b -u -p ${HOME}/turbo_bioinf595/opt/miniforge3
 rm -rf Miniforge3-latest-Linux-x86_64.sh
 
 # activate the local conda environment
-source ${HOME}/turbo_bioinf595/miniforge3/etc/profile.d/conda.sh
-source ${HOME}/turbo_bioinf595/miniforge3/etc/profile.d/mamba.sh
+source ${HOME}/turbo_bioinf595/opt/miniforge3/etc/profile.d/conda.sh
+source ${HOME}/turbo_bioinf595/opt/miniforge3/etc/profile.d/mamba.sh
 conda activate
 
 conda init
