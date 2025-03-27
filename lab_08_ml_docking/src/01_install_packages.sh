@@ -1,5 +1,3 @@
-
-
 # The installation of NeuralPlexer is a little bit tricky
 # The challenge is to make sure the versions of all the relevant packages
 # are working well together. Here is the setup I was able to get to work
@@ -24,11 +22,13 @@ exit 1
 ############################################################
 
 module purge
-module load R/4.4.0
-module load python/3.12.1
 module load cuda/12.6.3
 module load cudnn/12.6-v9.6.0
 module save bioinf595
+# now to get this named collection modules in a shell:
+#
+#  module restore bioinf595
+#
 
 
 # Create a symlink for the class turbo into the home directory
@@ -103,6 +103,9 @@ mamba create -n bioinf595
 mamba env list
 
 
+#
+conda activate bioinf595
+
 
 ####################
 # install openfold #
@@ -111,18 +114,15 @@ cd ${HOME}/turbo_bioinf595/opt
 # https://openfold.readthedocs.io/en/latest/Installation.html
 # note we're using the pl_upgrades branch because we have cuda version 12
 git clone -b pl_upgrades https://github.com/aqlaboratory/openfold.git
-cd openfold
+cd ${HOME}/turbo_bioinf595/opt/openfold
 
 # based on this issue: https://github.com/aqlaboratory/openfold/issues/519
-# edit environment.yml to specify specific version of flash-attn 
+# edit environment.yml to specify specific version of flash-attn
 sed "s/      - flash-attn/      - flash-attn==2.6.3/g" environment.yml > environment_patched.yml
-mv environment_patched.yml environment.yml
-
 
 # install openfold
-mamba env update -n bioinf595 -f environment.yml --yes
+mamba env update -n bioinf595 -f environment_patched.yml --yes
 pip install -e .
-cd ../..
 
 
 

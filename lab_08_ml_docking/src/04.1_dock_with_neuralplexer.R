@@ -7,7 +7,7 @@ data <- readr::read_tsv(
     dplyr::distinct(Smiles, .keep_all = TRUE)
 
 
-use_template <- FALSE
+use_template <- TRUE
 data |>
     dplyr::rowwise() |>
     dplyr::do({
@@ -41,7 +41,7 @@ data |>
                 "--cuda ",
                 "--discard-sdf-coords ",
                 "--sampler=langevin_simulated_annealing ",
-                "--separate-pdbs")
+                "--separate-pdb")
             cat(cmd, "\n", sep = "")
             system(cmd)
             data.frame()
@@ -98,7 +98,7 @@ data |>
                 "--cuda ",
                 "--discard-sdf-coords ",
                 "--sampler=langevin_simulated_annealing ",
-                "--separate-pdbs")
+                "--separate-pdb")
             cat(cmd, "\n", sep = "")
             system(cmd)
             data.frame()

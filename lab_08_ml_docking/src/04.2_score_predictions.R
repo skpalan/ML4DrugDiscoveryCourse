@@ -25,39 +25,57 @@ score_poses_with_smina <- function(
                 dplyr::do({
                     pose <- .
                     pose_id <- pose$pose_id[1]
-                    ligand_fname <- paste0(output_path, "/", pose$receptor_fname[1])
+                    ligand_fname <- paste0(output_path, "/", pose$ligand_fname[1])
                     receptor_fname <- paste0(output_path, "/", pose$receptor_fname[1])
                     cmd <- paste0(
                         smina_path, " ",
                         "--score_only ",
-                        "-r ", ligand_fname, " ",
-                        "-l ", receptor_fname, " | ",
+                        "-l ", ligand_fname, " ",
+                        "-r ", receptor_fname, " | ",
                         "grep \"Affinity: \"")
                     cat(cmd, "\n", sep = "")
                     affinity_line <- system(cmd, intern = TRUE)
+                    affinity <- affinity_line |>
+                        stringr::str_extract("Affinity: ([\\-0-9.]+)", group = 1) |>
+                        as.numeric()
+                    if (is.na(affinity)) {
+                        cat("Affinity is NA, inspect what is happening:")
+                        browser()
+                    }
                     data.frame(
                         output_path = output_path,
                         pose_id = pose_id,
                         ligand_fname = ligand_fname,
                         receptor_fname = receptor_fname,
-                        affinity = affinity_line |>
-                            stringr::str_extract("Affinity: ([0-9.]+)", group = 1) |>
-                            as.numeric())
+                        affinity = affinity)
                 })
         })
 }        
 
 
-smina_scores <- score_poses_with_smina("intermediate_data/1HXW_approved_template")
+smina_scores <- score_poses_with_smina("intermediate_data/approved_template_1HXW")
 smina_scores |>
-    readr::write_tsv("intermediate_data/1HXW_approved_template/smina_scores.tsv")
+    readr::write_tsv("intermediate_data/approved_template_1HXW/smina_scores.tsv")
 
-
-smina_scores <- score_poses_with_smina("intermediate_data/1HXW_approved_no_template")
+smina_scores <- score_poses_with_smina("intermediate_data/approved_template_1HHP")
 smina_scores |>
-    readr::write_tsv("intermediate_data/1HXW_approved_no_template/smina_scores.tsv")
+    readr::write_tsv("intermediate_data/approved_template_1HHP/smina_scores.tsv")
 
-
-smina_scores <- score_poses_with_smina("intermediate_data/1HXW_inactive_template")
+smina_scores <- score_poses_with_smina("intermediate_data/approved_no_template")
 smina_scores |>
-    readr::write_tsv("intermediate_data/1HXW_inactive_template/smina_scores.tsv")
+    readr::write_tsv("intermediate_data/approved_no_template/smina_scores.tsv")
+
+
+
+
+smina_scores <- score_poses_with_smina("intermediate_data/inactive_template_1HXW")
+smina_scores |>
+    readr::write_tsv("intermediate_data/inactive_template_1HXW/smina_scores.tsv")
+
+smina_scores <- score_poses_with_smina("intermediate_data/inactive_template_1HHP")
+smina_scores |>
+    readr::write_tsv("intermediate_data/inactive_template_1HHP/smina_scores.tsv")
+
+smina_scores <- score_poses_with_smina("intermediate_data/inactive_no_template")
+smina_scores |>
+    readr::write_tsv("intermediate_data/inactive_no_template/smina_scores.tsv")
