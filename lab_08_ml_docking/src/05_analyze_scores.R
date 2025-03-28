@@ -29,7 +29,7 @@ smina_scores <- smina_scores |>
       stringr::str_replace("/smina_scores.tsv", ""))
 
 
-scores <- smina_scores |>
+scores <- smina_scores_best |>
   dplyr::group_by(template) |>
   dplyr::do({
     x <- .
@@ -75,6 +75,6 @@ ggplot2::ggplot() +
   ggplot2::scale_x_continuous("(worse) <-- AUROC --> (better)")
 
 ggplot2::ggsave(
-  filename = "~/lab_08_scores.pdf",
+  filename = "product/enrichment_by_template_20250327.pdf",
   width = 6,
   height = 3)
