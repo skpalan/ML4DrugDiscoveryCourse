@@ -1,9 +1,4 @@
 
-
-
-
-}        
-
 source("src/score_poses_with_smina.R")
 
 smina_scores <- score_poses_with_smina("intermediate_data/approved_template_1HXW")
