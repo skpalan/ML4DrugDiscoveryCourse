@@ -39,7 +39,7 @@ ln -s /nfs/turbo/dcmb-class/bioinf595/sec001/${USER} ${HOME}/turbo_bioinf595
 
 
 # create an opt directory where you can install packages
-mkdir -p ${HOME}/turbo_bioinf595/opt
+mkdir ${HOME}/turbo_bioinf595/opt
 
 
 
@@ -88,7 +88,7 @@ source ${HOME}/turbo_bioinf595/opt/miniforge3/etc/profile.d/mamba.sh
 conda activate
 
 conda init
-mamba shell init
+mamba init
 # restart shell
 
 conda update -n base --all --yes
