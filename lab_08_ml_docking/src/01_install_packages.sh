@@ -156,5 +156,5 @@ cd ../..
 
 mkdir -p ${HOME}/turbo_bioinf595/opt/bin
 cd ${HOME}/turbo_bioinf595/opt/bin
-!wget https://sourceforge.net/projects/smina/files/smina.static/download -O smina && chmod +x smina
+wget https://sourceforge.net/projects/smina/files/smina.static/download -O smina && chmod +x smina
 cd ..
