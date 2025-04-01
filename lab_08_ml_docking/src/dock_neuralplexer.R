@@ -22,13 +22,13 @@ dock_neuralplexer <- function(
         if (overwrite) {
             if (verbose) {
                 cat(
-                    "Outputpath '", output_path, "' exists and ovewrite is requested \n",
+                    "Output path '", output_path, "' exists and ovewrite is requested \n",
                     sep = "")
             }
         } else {
             if (verbose) {
                 cat(
-                    "Outputpath '", output_path, "' exists and overwrite not requested, ",
+                    "Output path '", output_path, "' exists and overwrite not requested, ",
                     "skipping ...\n", sep = "")
             }
             return(1)
