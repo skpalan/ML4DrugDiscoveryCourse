@@ -129,7 +129,7 @@ pip install -e .
 # now instlal NeuralPLexer
 cd ${HOME}/turbo_bioinf595/opt
 git clone https://github.com/zrqiao/NeuralPLexer.git
-cd NeuralPLexer
+cd ${HOME}/turbo_bioinf595/opt/NeuralPLexer
 
 # remove openfold because we've already installed a specific version of it
 cat requirements.txt | sed '/openfold/d' > requirements_new.txt
