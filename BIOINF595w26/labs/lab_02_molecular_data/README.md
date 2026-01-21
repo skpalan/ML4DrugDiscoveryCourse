@@ -116,9 +116,9 @@ Please submit:
   * table of average distances for the S314 across all publically available CryoEM structures of KCNQ2
   * short answers to the following questions:
 
-) What are the range of average distances you see for the S314 gate? How does this relate to the function of protein?
-) Is retigabine (RTG) an agonist or an antagonist?
-) What is a structural re-arrangement that has to happen in the retigabine binding site to allow it to bind?
+1) What are the range of average distances you see for the S314 gate? How does this relate to the function of protein?
+2) Is retigabine (RTG) an agonist or an antagonist?
+3) What is a structural re-arrangement that has to happen in the retigabine binding site to allow it to bind?
 
 
 
