@@ -77,7 +77,7 @@ Structure basis for the activation of KCNQ2 by endogenous and exogenous ligands
 
 2) For each scene i:
    * Click the scene on the right window to orient the scene well
-   * In the "PyMOL>" bar, run `ray 2000, 2000; png scene_<i>.png` where <i> is e.g. 1, 2, etc.
+   * In the "PyMOL>" bar, run `ray 2000, 2000; png scene_<i>.png` where i is e.g. 1, 2, etc.
    * Look at the result and either adjust the scene or the render parameters re-render as needed to make it look good.
    
 ## Explore KCNQ2 structures programatically
