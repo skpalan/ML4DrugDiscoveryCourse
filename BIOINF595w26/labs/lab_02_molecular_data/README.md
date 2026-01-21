@@ -63,17 +63,19 @@ Structure basis for the activation of KCNQ2 by endogenous and exogenous ligands
 ### 4 Render views
 1) Set up options to make high-quality renderings by pasting this in the box next to "PyMOL>" at the bottom 
 
-    bg white
-    set light_count,8
-	set spec_count,5
-    set shininess, 10
-    set specular, 0.25
-    set ambient,0
-    set direct,0
-    set reflect,1.5
-    set ray_shadow_decay_factor, 0.1
-    set ray_shadow_decay_range, 2
-    unset depth_cue
+```
+bg white
+set light_count,8
+set spec_count,5
+set shininess, 10
+set specular, 0.25
+set ambient,0
+set direct,0
+set reflect,1.5
+set ray_shadow_decay_factor, 0.1
+set ray_shadow_decay_range, 2
+unset depth_cue
+```
 
 2) For each scene i:
    * Click the scene on the right window to orient the scene well
