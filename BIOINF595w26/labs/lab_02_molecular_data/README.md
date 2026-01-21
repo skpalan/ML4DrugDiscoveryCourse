@@ -6,7 +6,6 @@ This Lab aims at understanding the representation and manipulation of chemical a
 Learning objectives
  * Loading and analyzing 3D molecular structure data in PyMOL
  * Parsing 3D molecular data using python and the biotite library
- * Sanitizing and representing chemical data as InChi format using RDKit
  
 Reference material:
 
