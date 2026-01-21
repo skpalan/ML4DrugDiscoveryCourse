@@ -21,7 +21,7 @@ Structure basis for the activation of KCNQ2 by endogenous and exogenous ligands
 ### 1 Load KCNQ2 structures from the PDB into PyMOL
 1) Go to the protein databank (PDB) at https://www.rcsb.org/ and search for KCNQ2
 2) Navigate to 7CR0, and 7CR2 and download each structure in `PDBx/mmCIF Format` and store in the `data/` directory
-3) Open the three structures in PyMOL
+3) Open the two structures in PyMOL
 4) In the right panel next to 7CR2:
      * 'A'ctions => Align => All to this (*/CA) 
 
