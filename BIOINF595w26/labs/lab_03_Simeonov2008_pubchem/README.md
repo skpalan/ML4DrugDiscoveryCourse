@@ -39,7 +39,7 @@ Key learning objectives:
 ### Inspect the data in pubchem on the web
 The assay IDs for this study are 587, 588, 590, 591, 592, 593, 594
 
-Go to https://pubchem.ncbi.nlm.nih.gov/ and search for AID=584 as an example of the above assay ids
+Go to https://pubchem.ncbi.nlm.nih.gov/ and search for AID=587 as an example of the above assay ids
    * Advanced Search
    * Filter by BioAssay (AID)
    
