@@ -39,7 +39,7 @@ Key learning objectives:
 ### Inspect the data in pubchem on the web
 The assay IDs for this study are 587, 588, 590, 591, 592, 593, 594
 
-Go to https://pubchem.ncbi.nlm.nih.gov/ and search for AID=584 as an example of the above assay ids
+Go to https://pubchem.ncbi.nlm.nih.gov/ and search for AID=587 as an example of the above assay ids
    * Advanced Search
    * Filter by BioAssay (AID)
    
@@ -86,3 +86,4 @@ In R use the get_aid_compounds functions to download the active compounds for ea
       - I will check that it can be downloaded using the datasets python package
 	    (which will be the case if you used push_to_hub)
 	  - If the dataset card is brief, informative, and clear
+   * The code that you wrote
